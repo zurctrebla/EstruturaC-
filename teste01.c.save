@@ -1,0 +1,23 @@
+#include <stdlib.h>
+#include <iostream>
+
+using namespace std;
+
+struct s_pos {
+	int x, y;
+};
+
+struct s_circulo {
+	struct s_pos c;
+	float r;
+};
+
+int main() {
+	struct s_circulo *p;
+
+	p = (struct s_cirulo *) malloc(sizeof(struct s_circulo));
+
+	if() {
+	
+}
+
