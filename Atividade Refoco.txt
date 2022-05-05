@@ -1,0 +1,21 @@
+Uma empresa abriu processo seletivo para a vaga de Programador Júnior. No teste, realizado 100% online, solicitou-se aos participantes que analisassem a seguinte situação: 
+
+Uma empresa de locação de veículos esta solicitando um sistema para controlar os alugueis, o sistema deve conter structs Cliente, Veículos, Aluguel, alocação dinâmica e ponteiros. (2,0)
+
+Menu Principal
+1 - Cadastros
+2 - Registrar Aluguel (codigo, cpf cliente, placa do veiculo, data, quantidade de dias)
+3 - Relatórios
+4 - Sair
+
+Menu Cadastros
+1 - Cadastrar Cliente (CPF, nome, telefone)
+2 - Cadastrar Veiculo (Placa, modelo, fabricação, valor aluguel)
+3 - Voltar para o Menu Principal
+
+Menu Relatórios
+1 - Total dos Clientes (nome, total pago). Solicite o CPF do cliente para gerar o total especifico. 
+2 - Total dos Alugueis (total)
+3 - Voltar para o Menu Principal
+
+Obs: o sistema só deve encerrar quando solicitado.

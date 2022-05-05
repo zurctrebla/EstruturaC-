@@ -4,30 +4,25 @@
 using namespace std;
 
 struct Cliente{
-	int codigo = 0;
 	long cpf = 0;
 	char nome[50] = {};
 	char telefone[20] = {};
 };
 
-struct Veiculo{ //produto
-	int placa = 0;      //
-	char modelo[50];    //
-	int quantidade;
-    char fabricacao[12];    //
-	// float valor;
-    float valor;       //
+struct Veiculo{ 
+	int placa = 0;
+	char modelo[50] = {};
+    char fabricacao[12] = {};
+    float valor; 
 };
 
-struct Aluguel{   //venda
-	int codigo = 0; //
-	char data[20];  //
-	long cpf = 0;   //
-	int produto;
-    char placa[12]; //
-    double valor;   //
-	double total;
-	int dias;       //	    
+struct Aluguel{
+	int codigo = 0;
+	long cpf = 0;
+    char placa[12];
+	char data[20];
+	int dias;
+	double total;	// soma total valor
 };
 
 void menuPrincipal(){
@@ -83,9 +78,9 @@ bool validaCpf(Cliente *cliente, long cpf){
 
 int main(){			
 	
-	Cliente *pt_cliente = new Cliente[100]; //  cliente
-	Veiculo *pt_veiculo = new Veiculo[100]; //  produto
-	Aluguel *pt_aluguel = new Aluguel[100]; //  venda
+	Cliente *pt_cliente = new Cliente[100];
+	Veiculo *pt_veiculo = new Veiculo[100];
+	Aluguel *pt_aluguel = new Aluguel[100];
 
 	int op = 0, respProd;
 	float total = 0;
@@ -107,10 +102,8 @@ int main(){
                             do{
                                 cout<<" ################## Cadastrar Cliente ##################"<<endl;				
                                 for(int i = 0; i < 100; i++){
-                                	cout<<"CPF "<<pt_cliente[i].codigo<<endl;
-                                	if(pt_cliente[i].codigo == 0){
-                                		cout<<"Informe o codigo do cliente"<<endl;
-                                		cin>>pt_cliente[i].codigo;
+                                	cout<<"CPF "<<pt_cliente[i].cpf<<endl;
+                                	if(pt_cliente[i].cpf == 0){
                                 		cout<<"Informe o cpf do cliente"<<endl;
                                 		cin>>pt_cliente[i].cpf;						
                                 		cout<<"Informe o nome do cliente"<<endl;
@@ -140,6 +133,7 @@ int main(){
                                 		break;
                                 	}
                                 }
+                                break;
                             }while(respProd == 2);
                         break;
                     }
@@ -156,13 +150,14 @@ int main(){
                             cin>>pt_aluguel[i].cpf;
                             cout<<"Informe a placa do veiculo"<<endl;
                             cin>>pt_aluguel[i].placa;						
-                            cout<<"Informe a data do veiculo"<<endl;
+                            cout<<"Informe a data"<<endl;
                             cin>>pt_aluguel[i].data;						
                             cout<<"Informe a quantidade de dias"<<endl;
                             cin>>pt_aluguel[i].dias;						
                             break;
                         }
-                    }
+                    }					
+					break;
                 }while(respProd != 3);
 				
             break;
@@ -172,6 +167,47 @@ int main(){
                     menuRelatorios();
                     cout<<"Qual opção deseja?."<<endl;
                     cin>>respProd;
+
+					switch (respProd){
+					case 1:
+						do{
+							cout<<" ################## Total dos Clientes ##################"<<endl;
+
+							// Total dos Clientes (nome, total pago). Solicite o CPF do cliente para gerar o total especifico. 
+
+							total = 0;
+							for(int i = 0; i < 100; i++){
+
+								if(pt_cliente[i].nome != NULL){
+
+									cout<<"Nome: "<<pt_cliente[i].nome<<endl;
+
+								}
+
+							}					
+							break;
+						}while(respProd == 1);
+
+					break;
+					
+					case 2:
+						do{
+							cout<<" ################## Total dos Alugueis ##################"<<endl;
+							total = 0;
+							for(int i = 0; i < 100; i++){
+								// if(1 == 1){
+								// 	// total = total + ();
+
+								// }
+								// pt_cliente.[i].nome;
+								cout<<pt_cliente[i].nome<<endl;
+							}
+							// cout<<total<<endl;
+							// break;
+						}while(respProd == 2);
+
+					break;
+					}
 
                 }while(respProd != 3);
 				
